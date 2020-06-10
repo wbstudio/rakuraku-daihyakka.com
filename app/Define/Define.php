@@ -9,7 +9,6 @@ class Define extends Model
     //for admin list
     public function getSelectTimeList()
     {
-        $timeselecter = array();
         for($i=0; $i < 24; $i++){
             $timeselecter["hour"][] = $i;
         }

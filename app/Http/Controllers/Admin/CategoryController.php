@@ -66,4 +66,48 @@ class CategoryController extends Controller
         $result = $category ->save();
         return redirect("/admin/category/list");
     }
+
+    public function regist()
+    {
+        $mdCategory = new Category();
+        $categories = $mdCategory->getCategoriesList();
+
+        return view('admin.category.regist', ['categories' => $categories]);
+    }
+
+    public function registdata(Request $request)
+    {
+        //validation
+        $mdCategory   = new Category();
+        $valirule     = $mdCategory->getValirule();
+        $validatedData = $request->validate($valirule);
+        //time
+        $releaseDay  = str_replace("/","-",$request["release_day"]);
+        $releaseHour = str_pad($request["release_hour"], 2, 0, STR_PAD_LEFT);
+        $releaseMin  = str_pad($request["release_minute"], 2, 0, STR_PAD_LEFT);
+        $releaseDate = $releaseDay." ".$releaseHour.":".$releaseMin;
+        //DB
+        $category = new Category();
+        $category ->name = $request["name"];
+        $category ->main_id = $request["main_id"];
+        $category ->release_at = $releaseDate;
+        $result = $category ->save();
+        return redirect("/admin/category/list");
+    }
+    public function deleteFlag(Request $request)
+    {
+        // var_dump($_POST["del_id"]);
+        $deleteIds = $request["del_id"];
+        $update_column = [
+            'delete_flag' => 1,
+        ];
+        if(count($deleteIds) != 0){
+            Category::whereIn("id",$request["del_id"])
+            ->update($update_column);
+            Category::whereIn("main_id",$request["del_id"])
+            ->update($update_column);
+        }
+        return redirect("/admin/category/list");
+    }
+
 }

@@ -29,6 +29,8 @@ class Category extends Model
             }
             $aList[$index] = $value;
         }
+
+
         return $aList;
     }
 
@@ -42,7 +44,6 @@ class Category extends Model
                       ->get();
 
         $category = $data[0];
-
         //表示形式をviewに合わせる
         $releaseAtval = explode(" ",$category["release_at"]);
         $YMDval       = explode("-",$releaseAtval[0]);
@@ -50,6 +51,7 @@ class Category extends Model
         $category["disp_release_YMD"] = $YMDval[0]."/".$YMDval[1]."/".$YMDval[2];
         $category["disp_release_H"] = $HMSval[0];
         $category["disp_release_m"] = $HMSval[1];
+        
 
         return $category;
     }
@@ -60,6 +62,12 @@ class Category extends Model
                         "release_day" =>"required"
                     ];
         return $valirule;
+    }
+
+    public function getPureCategoriesList($type=null)
+    {
+        $aList =$this::where("delete_flag",0)->get();
+        return $aList;
     }
 
 }

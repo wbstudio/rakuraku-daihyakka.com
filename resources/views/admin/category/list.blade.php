@@ -14,12 +14,16 @@
                         </div>
                     @endif
                    <h3>Category List</h3>
+                   <a href="{{ route('admin.category_regist') }}">{{ __('New++') }}</a>
+                   <form action="{{ route('admin.category_list') }}" method="POST">
+                   @csrf
                    <table>
                         @foreach ($categories as $index => $category)
                             @if($category -> main_id == null)
                             <tr>
                             <th>{{ $category -> id}}</th>
                             <td><a href="edit/{{ $category -> id}}">{{ $category -> name}}</a></td>
+                            <td><input type="checkbox" value="{{$category -> id}}" name="del_id[]"></td>
                             </tr>
                             @endif
                             @if(isset($category->sub_categories))
@@ -27,11 +31,14 @@
                             <tr>
                             <th></th>
                             <td>┗<a href="edit/{{ $sub_category -> id}}">{{ $sub_category -> name}}</a></td>
+                            <td><input type="checkbox" value="{{$sub_category -> id}}" name="del_id[]"></td>
                             </tr>
                             @endforeach
                             @endif
                         @endforeach
                     </table>
+                    <input type="submit" value="checkしたものを消す" id="delete">
+                   </form>
                 </div>
             </div>
         </div>

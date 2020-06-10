@@ -66,7 +66,7 @@
                                 <a class="nav-link" href="{{ route('admin.category_list') }}">{{ __('Category') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.artical_list') }}">{{ __('Article') }}</a>
+                                <a class="nav-link" href="{{ route('admin.article_list') }}">{{ __('Article') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.inquery_list') }}">{{ __('Inquery') }}</a>
