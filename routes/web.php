@@ -16,7 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+// Route::get('/mail', 'MailSendController@send');
+Route::get('/mail', function () {
+    return new App\Mail\SendTestMail();
+  });
+  Route::get('/send', 'MailSendController@send');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
