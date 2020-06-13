@@ -33,7 +33,7 @@ class InqueryReturn extends Mailable
      */
     public function build()
     {
-        return $this->view('front.Inquery.resmail')
+        return $this->view('front.inquery.resmail')
         ->text('front.inquery.resmail')
         ->subject($this->title)
         ->with([
