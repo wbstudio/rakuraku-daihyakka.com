@@ -17,5 +17,6 @@ class MailSendController extends Controller
         $to = 'dirty.cross.37@icloud.com';
         Mail::to($to)->send(new SendTestMail($name, $text));
     }
+
     
 }

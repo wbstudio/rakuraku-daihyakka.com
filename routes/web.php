@@ -21,6 +21,9 @@ Route::get('/mail', function () {
     return new App\Mail\SendTestMail();
   });
   Route::get('/send', 'MailSendController@send');
+  Route::get('/inquery', 'InqueryController@index')->name('inquery');
+  Route::post('/inquery', 'InqueryController@confirm')->name('inquery');
+  Route::post('/inquery/complete', 'InqueryController@complete')->name('inquery_complete');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
