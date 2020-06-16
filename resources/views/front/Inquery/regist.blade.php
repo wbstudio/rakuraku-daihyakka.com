@@ -16,7 +16,7 @@
                         アドレス：<input type="text" name="adress" value="{{old('adress')}}">
                     </div>
                     <div>
-                        内容：<textarea name="main_text"> {{old('main_text')}}</textarea>
+                        内容：<textarea name="main_text"> {!! nl2br(e(old('main_text'))) !!}</textarea>
                     </div>
                     <div>
                         <input type="submit" value="確認画面へ">

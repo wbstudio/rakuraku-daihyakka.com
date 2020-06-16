@@ -16,12 +16,12 @@
                         アドレス：{{$inquery -> adress}}
                     </div>
                     <div>
-                        内容：{!!$inquery -> main_text!!}
+                        内容：{!! nl2br(e($inquery -> main_text)) !!}
                     </div>
                     <div>
                     <input type="hidden" name="name" value="{{$inquery -> name}}">
                     <input type="hidden" name="adress" value="{{$inquery -> adress}}">
-                    <input type="hidden" name="main_text" value="{!!$inquery -> main_text!!}">
+                    <input type="hidden" name="main_text" value="{!! nl2br(e($inquery -> main_text)) !!}">
                     <input type="submit" name="action" value="submit">
                     <input type="submit" name="action" value="back">
                     </div>
