@@ -7,21 +7,20 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class SendTestMail extends Mailable
+class InqueryResponse extends Mailable
 {
     use Queueable, SerializesModels;
-    protected $title;
-    protected $text;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($name='テスト', $text='テストです。')
+    public function __construct($name='', $text='')
     {
         //
-        $this->title = sprintf('%sさん、ありがとうございます。', $name);
-        $this->text = $text;
+        $this->title = $text["title"];
+        $this->text = $text["main"];
   
     }
 
@@ -32,8 +31,8 @@ class SendTestMail extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.test')
-        ->text('emails.test')
+        return $this->view('admin.inquery.resmail')
+        ->text('admin.inquery.resmail')
         ->subject($this->title)
         ->with([
             'text' => $this->text,

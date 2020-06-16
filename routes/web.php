@@ -45,7 +45,6 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->group(function(){
         Route::get('/edit/{id}', 'CategoryController@edit')->where('name', '[1-9]+');
         Route::post('/updata', 'CategoryController@updata')->name('category_updata');
     });    
-
     //Admin-Article
     Route::group(['prefix' => 'article'], function () {
         Route::get('/list', 'ArticleController@getIndex')->name('article_list');
@@ -54,5 +53,14 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->group(function(){
         Route::post('/regist', 'ArticleController@registdata')->name('article_regist');
         Route::get('/edit/{id}', 'ArticleController@edit')->where('name', '[1-9]+');
         Route::post('/updata', 'ArticleController@updata')->name('article_updata');
+    });    
+    //Admin-Inquery
+    Route::group(['prefix' => 'inquery'], function () {
+        Route::get('/list', 'InqueryController@getIndex')->name('inquery_list');
+        Route::post('/list', 'InqueryController@deleteFlag')->name('inquery_list');
+        // Route::get('/regist', 'InqueryController@regist')->name('inquery_regist');
+        // Route::post('/regist', 'InqueryController@registdata')->name('inquery_regist');
+        Route::get('/reposponse/{id}', 'InqueryController@response')->where('name', '[1-9]+');
+        Route::post('/reposponse', 'InqueryController@send')->name('inquery_reposponse');
     });    
 });

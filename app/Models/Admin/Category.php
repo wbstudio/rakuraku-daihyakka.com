@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    //for admin list
+    //for admin list0
     public function getCategoriesList($type=null)
     {
 

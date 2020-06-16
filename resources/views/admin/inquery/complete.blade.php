@@ -13,8 +13,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                   <h3>Complete</h3>
+                   <a href="{{ route('admin.inquery_list') }}">もどる</a>
                 </div>
             </div>
         </div>
