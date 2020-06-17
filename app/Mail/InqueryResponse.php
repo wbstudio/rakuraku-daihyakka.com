@@ -31,7 +31,7 @@ class InqueryResponse extends Mailable
      */
     public function build()
     {
-        return $this->view('admin.inquery.resmail')
+        return $this->text('admin.inquery.resmail')
         ->text('admin.inquery.resmail')
         ->subject($this->title)
         ->with([
