@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'IndexController@index')->name('index');
+
+
 // Route::get('/mail', 'MailSendController@send');
 Route::get('/mail', function () {
     return new App\Mail\SendTestMail();
