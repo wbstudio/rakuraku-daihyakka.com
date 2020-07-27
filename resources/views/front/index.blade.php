@@ -7,15 +7,10 @@
     <section class="info sp">
         <h2>更新情報</h2>
         <table id="info-table">
-            <tr><th><span class="dashed_af">2020.03.03</span>&nbsp;<span class="new_mark">NEW</span></th>
-            <td><span class="dashed_af">ああああああああああああああああああああああああ</span></td></span></tr>
-            
-            <tr><th><span class="dashed_af">2020.03.03</span></th>
-            <td><span class="dashed_af">ああああああああああああああああああああああああ</span></td></span></tr>
-
-            <tr><th><span class="dashed_af">2020.03.03</span></th>
-            <td><span class="dashed_af">ああああああああああああああああああああああああ</span></td></span></tr>
-
+            @foreach ($recentlylists as $recentlylist)
+            <tr><th><span class="dashed_af">{{ $recentlylist -> release_at->format('Y.m.d')}}</span>&nbsp;<span class="new_mark">NEW</span></th>
+            <td><span class="dashed_af">{{ $recentlylist -> title}}</span></td></span></tr>
+            @endforeach
         </table>
     </section>
     @endif

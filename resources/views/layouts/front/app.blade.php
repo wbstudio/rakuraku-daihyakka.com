@@ -80,21 +80,6 @@
 
                 <!--content-->
                 @yield('content')
-<!--
-                <div class="side_info">
-                    <ul>
-                    <li class="pc"><a href src=""><img src="images/ban01.png"/ alt="アウトレット"></a></li>
-                    <li class="pc"><a href src=""><img src="images/ban02.png"/></a></li>
-                    </ul>
-
-                    <ul>
-                        <li class="sp"><a href src=""><img src="images/ban01_sp.png"/ alt="アウトレット"></a></li>
-                        <li class="sp"><a href src=""><img src="images/ban02_sp.png"/></a></li>
-                        </ul>
-                </div>-->
-
-
-
             </main>
 
         <footer>

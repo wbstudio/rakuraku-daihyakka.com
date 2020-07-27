@@ -29,7 +29,7 @@ class Article extends Model
         $aList =$this::from("articles as ar")
                     ->join("categories as ca","ar.category_id","=","ca.id")
                     ->where($whereList)
-                    ->orderby("ar.created_at","desc")
+                    ->orderby("ar.release_at","desc")
                     ->limit(3)
                     ->get($columnList);
         return $aList;
