@@ -7,7 +7,7 @@
     <h2>お問い合わせ</h2>
     <div class="formbox">
         <form method="POST" action="{{ route('inquery') }}">
-        @csrf
+            @csrf
             <p id="form">
             メールアドレス<span class="red">（必須）</span><br>
             <input class="inp30" type="text" name="adress" value="{{old('adress')}}">

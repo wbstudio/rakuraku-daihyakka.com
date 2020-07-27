@@ -23,7 +23,7 @@
                         問い合わせアドレス::{{$inquery -> adress}}
                     </div>
                     <div>
-                    問い合わせ内容::{{$inquery -> main_text}}
+                    問い合わせ内容::{!!$inquery -> main_text!!}
                     </div>
                     <div>
                     問い合わせ時間::{{$inquery -> created_at}}

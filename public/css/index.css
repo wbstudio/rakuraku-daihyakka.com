@@ -464,9 +464,31 @@ input.send_b{
 	margin:0 auto;
 	/* padding-top:25px; */
 }
-
-
-
+.call table th,td{
+    padding-bottom: 15px;
+}
+.call table th{
+    text-align: left;
+    vertical-align:bottom;
+}
+.call table th.detail{
+    text-align: left;
+    vertical-align:baseline;
+}
+.sbs_button{
+    margin-top: 20px;
+}
+.sbs_button input{
+	width:150px;
+	height:50px;
+	display:inline-block;
+	border:1px solid #dcdcdc;
+    margin:0 auto;
+    cursor: pointer;
+}
+.return_button{
+    text-align: center;
+}
 footer{
     max-width:100%;
     padding:10px 0;

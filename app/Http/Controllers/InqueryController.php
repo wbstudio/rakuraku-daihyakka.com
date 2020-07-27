@@ -21,17 +21,30 @@ class InqueryController extends Controller
     }
 
     public function confirm(Request $request){
+        $mdCategory = new Category();
+        $mdArticle = new Article();
+        $categories = $mdCategory->getCategoriesList();
+        $recentlylists = $mdArticle->getArticlesRecentlyList();
         $data = $request->all();
         $request->session()->put($data); 
         $mdInquery   = new Inquery();
         $valirule     = $mdInquery->getValirule();
         $validatedData = $request->validate($valirule);
 
-        return view('front.inquery.confirm', ['inquery' => $request]);
+        return view('front.inquery.confirm', ['inquery' => $request,'categories' => $categories,'recentlylists' => $recentlylists]);
     }
 
     public function complete(Request $request){
+        $mdCategory = new Category();
+        $mdArticle = new Article();
+        $categories = $mdCategory->getCategoriesList();
+        $recentlylists = $mdArticle->getArticlesRecentlyList();
         $action = $request->get('action', 'back');
+        if(isset($action) && $action == "送信する"){
+            $action = "submit";
+        }else{
+            $action = "back";
+        }
         // 二つ目は初期値です。
         $input = $request->except('action');
         if($action === 'submit') {
@@ -52,7 +65,7 @@ class InqueryController extends Controller
             $inquery ->response = 0;
             $result = $inquery ->save();
                 
-            return view('front.inquery.complete');
+            return view('front.inquery.complete',['categories' => $categories,'recentlylists' => $recentlylists]);
         } else {
             return redirect()->action('InqueryController@index')
                              ->withInput($input);
