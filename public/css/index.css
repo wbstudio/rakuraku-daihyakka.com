@@ -21,7 +21,7 @@ header h1{
     width:1120px;
   }
   
-  .menu-container .menu {
+  .menu-container .main_menu {
     display: flex;
     justify-content: space-between;
     list-style: none;
@@ -30,11 +30,11 @@ header h1{
     
   }
   
-  .menu-container .menu .menu-item {
+  .menu-container .main_menu  .menu-item {
     flex: 1;
   }
   
-  .menu-container .menu .menu-item a {
+  .menu-container .main_menu  .menu-item a {
 
 	background:#ff3c22;
 	border-radius:10px;
@@ -47,12 +47,12 @@ header h1{
     width:92%;
   }
   
-  .menu-container .menu .menu-item a:hover {
+  .menu-container .main_menu  .menu-item a:hover {
     background: #ccc;
     color: #ffffff;
   }
   
-  .menu-container .menu .menu-item:last-child a {
+  .menu-container .main_menu  .menu-item:last-child a {
     border-right: none;
   }
   
@@ -164,7 +164,7 @@ header h1{
 }
 
 .top_search form {
-    width:320px;
+    width:100%;
     margin:5px auto 0;
     padding:0px;
     text-align:center;
@@ -172,14 +172,14 @@ header h1{
 }
 
 .top_search input.window {
-    width:50%;
-    height:30px;
+    width:35%;
+    height:20px;
     margin:0 auto;
     background:#ececec;
 }
 .top_search input.butn {
-    width:100px;
-    height:37px;
+    width:30%;
+    height:30px;
     margin:10px auto;
 }
 
@@ -216,6 +216,7 @@ main{
     border:1px solid #dcdcdc;
     float:left;
     margin-top:20px;
+    width:23%;
 
 }
 
@@ -226,9 +227,14 @@ h3{
     padding:5px 0;
     margin:0;
     text-align:center;
-    background:#dcdcdc;
-    border-top:2px solid #ADADAD;
-    border-bottom:2px solid #ADADAD;
+ /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f7b75d+0,ff9d14+52,ef4b32+100 */
+background: #f7b75d; /* Old browsers */
+background: -moz-linear-gradient(top,  #f7b75d 0%, #ff9d14 52%, #ef4b32 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #f7b75d 0%,#ff9d14 52%,#ef4b32 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #f7b75d 0%,#ff9d14 52%,#ef4b32 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b75d', endColorstr='#ef4b32',GradientType=0 ); /* IE6-9 */
+    border-top:2px solid #FF7F4D;
+    border-bottom:2px solid #FF7F4D;
 }
 
 
@@ -242,8 +248,14 @@ ul#menu, ul.sub_menu{
     padding:0;
 }
 
+ul.sub_menu li{
+	padding-left:35px;
+	font-size:1rem;
+}
+
+
 #menu{
-    width:326px;
+
     margin:10px; 
 }
 .menu_in{
@@ -302,8 +314,9 @@ ul#menu, ul.sub_menu{
  }
  
 #side_info-table{
-   width:316px;
+   width:100%;
    padding:0 5px;
+   line-height:30px;
   }
  #side_info-table th{
    text-align:left;
@@ -323,7 +336,7 @@ font-size:0.8rem
 
 /*--------コンテンツ---------------------*/
 #content{
-    width:750px;
+    width:73%;
     margin:0 0 0 20px;
     float:right;
 }
@@ -387,9 +400,14 @@ font-size:0.8rem
     padding:10px 0;
     margin:0;
     text-align:center;
-    background:#dcdcdc;
-    border-top:2px solid #ADADAD;
-    border-bottom:2px solid #ADADAD;
+ /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f7b75d+0,ff9d14+52,ef4b32+100 */
+background: #f7b75d; /* Old browsers */
+background: -moz-linear-gradient(top,  #f7b75d 0%, #ff9d14 52%, #ef4b32 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #f7b75d 0%,#ff9d14 52%,#ef4b32 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #f7b75d 0%,#ff9d14 52%,#ef4b32 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b75d', endColorstr='#ef4b32',GradientType=0 ); /* IE6-9 */
+    border-top:2px solid #FF7F4D;
+    border-bottom:2px solid #FF7F4D;
 }
 
 
@@ -546,15 +564,15 @@ main{
         width: 100%;
     }
 
-    .menu-container .menu {
+    .menu-container .main_menu {
       display: none;
       width: 100%;
     }
-    .menu-container .menu .menu-item a {
+    .menu-container .main_menu .menu-item a {
       border-bottom: 1px solid #ccc;
       border-right: none;
     }
-    .menu-container .menu .menu-item:last-child a {
+    .menu-container .main_menu .menu-item:last-child a {
       border-bottom: none;
     }
   
@@ -744,13 +762,20 @@ ul#menu, ul.sub_menu{
 
 .info table th,td{
     font-weight:normal;
-    padding-top:5px;
+    padding-top:0px;
     padding-left:5%;
     padding-right:5%;
     display: block;
     width:90%;
     text-align: left;
-    line-height:40px;
+    line-height:32px;
+    font-size:0.8rem;
+}
+
+.info table th{
+font-weight:bold;
+padding-top:10px;
+font-size:1rem;
 }
 
 .dashed_af{

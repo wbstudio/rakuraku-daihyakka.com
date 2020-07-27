@@ -25,15 +25,15 @@
                             <td><a href="edit/{{ $category -> id}}">{{ $category -> name}}</a></td>
                             <td><input type="checkbox" value="{{$category -> id}}" name="del_id[]"></td>
                             </tr>
-                            @endif
-                            @if(isset($category->sub_categories))
-                            @foreach ($category->sub_categories as $idx => $sub_category)
-                            <tr>
-                            <th></th>
-                            <td>┗<a href="edit/{{ $sub_category -> id}}">{{ $sub_category -> name}}</a></td>
-                            <td><input type="checkbox" value="{{$sub_category -> id}}" name="del_id[]"></td>
-                            </tr>
-                            @endforeach
+                                @if(isset($category->sub_categories))
+                                @foreach ($category->sub_categories as $idx => $sub_category)
+                                <tr>
+                                <th></th>
+                                <td>┗<a href="edit/{{ $sub_category -> id}}">{{ $sub_category -> name}}</a></td>
+                                <td><input type="checkbox" value="{{$sub_category -> id}}" name="del_id[]"></td>
+                                </tr>
+                                @endforeach
+                                @endif
                             @endif
                         @endforeach
                     </table>

@@ -20,7 +20,7 @@ class Article extends Model
         $aList =$this::from("articles as ar")
                     ->join("categories as ca","ar.category_id","=","ca.id")
                     ->where("ar.delete_flag",0)
-                    ->orderby("ar.created_at","desc")
+                    ->orderby("ar.release_at","desc")
                     ->get($columnList);
         return $aList;
     }
