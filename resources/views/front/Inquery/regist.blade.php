@@ -1,30 +1,34 @@
-@extends('layouts.contents_header')
+@extends('layouts.front.app')
 
 @section('content')
-<div class="">
-    <div class="">
-        <div class="">
-            <div class="">
+<div id="content">
+<section class="call">
 
-                <div class="">
-                <form method="POST" action="{{ route('inquery') }}">
-                @csrf
-                    <div>
-                        お名前：<input type="text" name="name" value="{{old('name')}}">
-                    </div>
-                    <div>
-                        アドレス：<input type="text" name="adress" value="{{old('adress')}}">
-                    </div>
-                    <div>
-                        内容：<textarea name="main_text"> {!! nl2br(e(old('main_text'))) !!}</textarea>
-                    </div>
-                    <div>
-                        <input type="submit" value="確認画面へ">
-                    </div>
-                </form>
-                </div>
-            </div>
-        </div>
+    <h2>お問い合わせ</h2>
+    <div class="formbox">
+        <form method="POST" action="{{ route('inquery') }}">
+        @csrf
+            <p id="form">
+            メールアドレス<span class="red">（必須）</span><br>
+            <input class="inp30" type="text" name="adress" value="{{old('adress')}}">
+            </p>
+
+            <p>
+            お名前<span class="red">（必須）</span><br>
+            <input class="inp30" type="text" name="name" value="{{old('name')}}">
+            </p>
+
+            <p>
+            お問い合わせ内容<span class="red">（必須）</span><br>
+            <textarea class="inp100" name="main_text"> {!! nl2br(e(old('main_text'))) !!}</textarea>
+            </p>
+
+            <p class="center">
+                <input class="send_b" type="submit" value="送信する">
+            </p>
+        </form>
     </div>
+
+</section>
 </div>
 @endsection

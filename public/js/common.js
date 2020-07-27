@@ -26,11 +26,12 @@ $(window).on('load', function () {
 $(function(){
     $('.sub_menu').hide();
     $('.menu_in').click(function(){
-        $('img').removeClass('rotate');
-        $('ul.sub_menu').slideUp();
         if($('+ul.sub_menu',this).css('display') == 'none'){
             $('img',this).addClass('rotate');
             $('+ul.sub_menu',this).slideDown();
+        }else{
+            $('img',this).removeClass('rotate');
+            $('+ul.sub_menu',this).slideUp();
         }
     });
 });

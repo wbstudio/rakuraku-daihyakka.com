@@ -6,16 +6,21 @@ use Illuminate\Http\Request;
 use Mail;
 use App\Mail\InqueryReturn;
 use \App\Models\Front\Inquery;
+use \App\Models\Front\Category;
+use \App\Models\Front\Article;
 
 class InqueryController extends Controller
 {
     //
     public function index(){
-        return view('front.inquery.regist');
+        $mdCategory = new Category();
+        $mdArticle = new Article();
+        $categories = $mdCategory->getCategoriesList();
+        $recentlylists = $mdArticle->getArticlesRecentlyList();
+        return view('front.inquery.regist', ['categories' => $categories,'recentlylists' => $recentlylists]);
     }
 
     public function confirm(Request $request){
-
         $data = $request->all();
         $request->session()->put($data); 
         $mdInquery   = new Inquery();

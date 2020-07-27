@@ -22,12 +22,12 @@
             <div class="hamburger"><span></span></div>
                 <nav class="menu-container">
                 <ul class="main_menu">
-                    <li class="menu-item"><a href="#">TOP</a></li>
+                    <li class="menu-item"><a href="{{ route('index') }}">TOP</a></li>
                     <li class="menu-item"><a href="#">カテゴリー</a></li>
                     <li class="menu-item"><a href="#">検証結果</a></li>
                     <li class="menu-item"><a href="#">自己紹介</a></li>
                     <li class="menu-item"><a href="#">サイトの使い方</a></li>
-                    <li class="menu-item"><a href="#">お問い合わせ</a></li>
+                    <li class="menu-item"><a href="{{ route('inquery') }}">お問い合わせ</a></li>
                     <div class="top_search sp">
                         <form action="./" method="get">
                         <input class="window"type="text" size="20" name="q" value="" maxlength="200" />
