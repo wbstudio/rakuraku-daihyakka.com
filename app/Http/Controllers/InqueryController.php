@@ -54,7 +54,8 @@ class InqueryController extends Controller
             $validatedData = $request->validate($valirule);
 
             $name = $input["name"];
-            $text = $input["main_text"];
+            // $text = $input["main_text"];
+            $text = str_replace("<br />","",$input["main_text"]);
             $to = $input["adress"];
             Mail::to($to)->send(new InqueryReturn($name, $text));
     
