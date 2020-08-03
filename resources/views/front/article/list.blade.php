@@ -15,8 +15,11 @@
     <div class="kiji">
     <a href="{{route('article')}}/{{$Article->id}}" style="width:100%;">
 		<p class="kiji_title">{{$Article->title}}</p>
-		<p class="kiji_day">{{$Article->release_at->format('Y年m月d日')}}　{{$Article->category_name}}<img src="images/file.png"></p>
-        <p class="kiji_gazo"><img src="images/gazo.png"></p>
+		<p class="kiji_day">
+            {{$Article->release_at->format('Y年m月d日')}}　{{$Article->category_name}}
+            <img src="{{route("index")}}/images/file.png">
+        </p>
+        <p class="kiji_gazo"><img src="{{route("index")}}/images/gazo.png"></p>
 		<p class="kiji_in">ああああああああああああああああああああああ...[続きを読む]</p>
 		</a>
 	</div>
