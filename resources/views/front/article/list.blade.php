@@ -10,6 +10,7 @@
             「{{$pagetitle}}」の検索結果一覧
          @endif
     </h2>
+    @isset($Articles)
     @foreach($Articles as $Article)
     <div class="kiji">
     <a href="{{route('article')}}/{{$Article->id}}" style="width:100%;">
@@ -20,7 +21,11 @@
 		</a>
 	</div>
     @endforeach
-
+    @else
+    <div class="kiji">
+        記事がない...orz
+	</div>
+    @endisset
     @isset($pagenator -> firstPageNum)
     <a href="{{route("index")}}/{{$url}}/article-list/{{$keyforurl}}/{{$pagenator -> firstPageNum}}">最初</a>
     @endisset

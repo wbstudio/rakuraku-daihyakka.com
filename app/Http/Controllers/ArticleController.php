@@ -25,7 +25,13 @@ class ArticleController extends Controller
             $key = preg_split('/[\p{Z}\p{Cc}]++/u', $key);
         }
         $Articles = $mdArticle->getArticlesListByKey($url,$key);
-        $data = AvailController::pagenator((array)$Articles,$page,$per_page);
+        if(isset($Articles[0])){
+            $data = AvailController::pagenator((array)$Articles,$page,$per_page);
+        }else{
+            $data = new \stdClass();
+            $data ->data = null;
+            $data ->link = null;
+        }
         $dispArray =['categories' => $categories,
                      'recentlylists' => $recentlylists,
                      'Articles' => $data ->data,
