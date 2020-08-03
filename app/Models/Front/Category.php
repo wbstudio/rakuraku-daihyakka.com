@@ -34,4 +34,24 @@ class Category extends Model
         return $aList;
     }
 
+    public function getCategoryName($id){
+        $columnList = [
+                    "id",
+                    "name",
+                    ];
+
+        $whereList = [
+            ["delete_flag","=",0],
+            ["release_at","<",NOW()],
+            ["id","=",$id],
+        ];
+
+        $aList =$this::from("categories as ca")
+                    ->where($whereList)
+                    ->get($columnList);
+
+        return $aList[0];
+
+    }
+
 }

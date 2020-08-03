@@ -17,14 +17,19 @@
                     @endif
                    <h3>Article Insert</h3>
                     <div>
-                        CategoryName::<input type="text" name="title">
+                        title::<input type="text" name="title">
                     </div>
                     <div>
                     Category::
                     <select name="category_id">
-                            @foreach ($categories as  $category)
-                                <option value="{{ $category -> id}}">{{ $category -> name}}</option>
-                            @endforeach
+                        @foreach ($categories as $index => $category)
+                            @if($category -> main_id == null)
+                            <option disabled @if($index == 0)selected @endif>--(main){{ $category -> name}}--</option>
+                                @foreach ($category->sub_categories as $sub_category)
+                                <option value="{{$sub_category -> id}}">--(sub){{ $sub_category -> name}}</option>
+                                @endforeach
+                            @endif
+                        @endforeach
                     </select>
                     </div>
                     <div>

@@ -37,7 +37,7 @@ class ArticleController extends Controller
     public function regist()
     {
         $mdCategory = new Category();
-        $categories = $mdCategory->getPureCategoriesList();
+        $categories = $mdCategory->getCategoriesList();
 
         return view('admin.article.regist', ['categories' => $categories]);
     }
@@ -67,7 +67,7 @@ class ArticleController extends Controller
         $mdArticle   = new Article();
         $article     = $mdArticle->getArticleById($id);
         $mdCategory = new Category();
-        $categories = $mdCategory->getPureCategoriesList();
+        $categories = $mdCategory->getCategoriesList();
         $mdDefine     = new Define();
         $timeselecter = $mdDefine->getSelectTimeList();
         $return = ['article' => $article,

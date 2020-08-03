@@ -22,15 +22,14 @@
                     <div>
                     MainCategory::
                     <select name="category_id">
-                            @foreach ($categories as $index => $category)
-                                <option value="{{ $category -> id}}"  @if($category->id==$article->category_id) selected @endif>
-                                @if($category->main_id==null)
-                                (m)
-                                @else
-                                (S)
-                                @endif    
-                                {{ $category -> name}}</option>
-                            @endforeach
+                        @foreach ($categories as $category)
+                            @if($category -> main_id == null)
+                            <option disabled>--(main){{ $category -> name}}--</option>
+                                @foreach ($category->sub_categories as $sub_category)
+                                <option value="{{$sub_category -> id}}" @if($category->id==$article->category_id) selected @endif>(sub){{ $sub_category -> name}}</option>
+                                @endforeach
+                            @endif
+                        @endforeach
                     </select>
                     </div>
                     <div>

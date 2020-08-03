@@ -8,6 +8,16 @@ use Illuminate\Support\Facades\Route;
 */
 //Top画面
 Route::get('/', 'IndexController@index')->name('index');
+//Category画面
+Route::get('/category', 'CategoryController@index')->name('category');
+//記事一覧(→Category)
+Route::get('/{url}/article-list/{key}/{page}', 'ArticleController@index')->where(['key', '[1-9]+'],['page', '[1-9]+']);
+//記事一覧(→検索窓)
+Route::post('/search/article-list', 'ArticleController@search')->name('search');
+Route::get('/{url}/article-list/{key}/{page}', 'ArticleController@index');
+//記事一覧(→Category)
+Route::get('/article', 'ArticleController@index')->name('article');
+Route::get('/article/{key}', 'ArticleController@index')->where('name', '[1-9]+');
 //問い合わせ()
 Route::get('/inquery', 'InqueryController@index')->name('inquery');
 //問い合わせ()

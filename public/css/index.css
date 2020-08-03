@@ -415,6 +415,119 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b75d', end
 }
 
 
+/*----------------kiji.html----------------------*/
+
+.kijibox{
+
+}
+
+
+.kiji{
+	background:#fff;
+	border:1px solid #dcdcdc;
+	padding:10px;
+	margin-top:20px;
+}
+
+.kiji_title{
+	font-size:1.5rem;
+	font-weight:bold;
+	padding:0;
+	margin:0;
+}
+
+.kiji_day{
+	background:#E5E5E5;
+}
+
+.kiji_day img{
+	max-width:2%;
+	padding-left:5px;
+	vertical-align:middle;
+}
+
+.kiji_gazo{
+	margin:0 auto;
+}
+
+.kiji a{
+	color:#000;
+	display:inline-block;
+}
+
+
+.kiji a:hover{
+	color:blue;
+	opacity:0.8;
+}
+/*----------------kiji.html end----------------------*/
+
+
+
+/*----------------kiji.html----------------------*/
+
+.kijibox{
+
+}
+
+
+.kiji{
+	background:#fff;
+	border:1px solid #dcdcdc;
+	padding:10px;
+	margin-top:20px;
+}
+
+.kiji_title{
+	font-size:1.5rem;
+	font-weight:bold;
+	padding:0;
+	margin:0;
+}
+
+.kiji_day{
+	background:#E5E5E5;
+}
+
+.kiji_day img{
+	max-width:2%;
+	padding-left:5px;
+	vertical-align:middle;
+}
+
+.kiji_gazo{
+	margin:0 auto;
+}
+
+.kiji a{
+	color:#000;
+	display:inline-block;
+}
+
+
+.kiji a:hover{
+	color:blue;
+	opacity:0.8;
+}
+/*----------------kiji.html end----------------------*/
+
+
+/*-----------------------category.html----------------------*/
+
+.category dt{
+	font-size:1.5rem;
+	font-weight:bold;
+	background:#e2e2e2;
+	padding:3px;
+	margin-top:10px;
+}
+
+.category dd{
+	margin-top:10px;
+	font-size:1.2rem;
+}
+
+/*-----------------------category.html end----------------------*/
 
 
 .call{
@@ -441,11 +554,6 @@ input.inp100{
 	height:100px;
 	font-size:1.2rem;
 }
-textarea.inp100{
-	width:100%;
-	height:100px;
-	font-size:1.2rem;
-}
 
 a.send_b{
 	width:300px;
@@ -456,6 +564,7 @@ a.send_b{
 	padding-top:25px;
 }
 
+/* add-start */
 input.send_b{
 	width:300px;
 	height:50px;
@@ -464,12 +573,18 @@ input.send_b{
 	margin:0 auto;
 	/* padding-top:25px; */
 }
+textarea.inp100{
+	width:100%;
+	height:100px;
+	font-size:1.2rem;
+}
 .call table th,td{
     padding-bottom: 15px;
 }
 .call table th{
     text-align: left;
     vertical-align:bottom;
+    width: 70px;
 }
 .call table th.detail{
     text-align: left;
@@ -489,6 +604,8 @@ input.send_b{
 .return_button{
     text-align: center;
 }
+/* add-end */
+
 footer{
     max-width:100%;
     padding:10px 0;
@@ -588,7 +705,7 @@ header h1{
 
 
 header h1 img{
-    max-width:100%;
+    max-width:80%;
 }
 
 main{
@@ -858,6 +975,71 @@ font-size:1rem;
     background: linear-gradient(to bottom,  #f7b75d 0%,#ff9d14 52%,#ef4b32 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b75d', endColorstr='#ef4b32',GradientType=0 ); /* IE6-9 */
 }
+
+
+
+/*----------------kiji.html----------------------*/
+
+.kijibox{
+
+}
+
+
+.kiji{
+	background:#fff;
+	border:1px solid #dcdcdc;
+	padding:10px;
+	margin-top:20px;
+}
+
+.kiji_title{
+	font-size:1.5rem;
+	font-weight:bold;
+	padding:0;
+	margin:0;
+}
+
+.kiji_day{
+	background:#E5E5E5;
+}
+
+.kiji_day img{
+	max-width:4%;
+	vertical-align:middle;
+}
+
+.kiji_gazo{
+	margin:0 auto;
+	max-width:100%;
+}
+
+.kiji_gazo img{
+	max-width:100%;
+}
+
+
+.kiji a{
+	color:#000;
+	display:inline-block;
+}
+
+
+.kiji a:hover{
+	color:blue;
+	opacity:0.8;
+}
+
+/*----------------kiji.html end----------------------*/
+
+
+
+
+
+
+
+
+
+
 
 footer{
     max-width:92%;
