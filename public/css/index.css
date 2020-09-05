@@ -509,6 +509,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7b75d', end
 	color:blue;
 	opacity:0.8;
 }
+
+.article_lead{
+    overflow: hidden;
+    width: 100%;
+    margin-top: 16px;
+}
+.article_lead p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 1px;
+    margin-bottom: 3px;
+}
+
+.article_open{
+    margin-top: 0;
+}
 /*----------------kiji.html end----------------------*/
 
 
